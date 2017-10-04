@@ -1,0 +1,22 @@
+body {
+	background-image: url('../img/bcg2.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+}
+.container {
+	max-width: 1300px;
+	margin: 0 auto;
+	width: 100%;
+}
+.cover {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.avatar {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin-bottom: 30px;
+}
