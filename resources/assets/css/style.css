@@ -11,6 +11,9 @@ body, html {
 	padding: 0;
 	width: 100%;
 }
+.navbar .container {
+	padding: 0 15px;
+}
 .absolute {
 	position: absolute;
 }
