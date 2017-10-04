@@ -16,6 +16,4 @@ class CatController extends Controller
     {
         //
     }
-
-    
 }
