@@ -1,5 +1,5 @@
 <template>
-	<div id="vote">
+	<div id="vote" class="container">
 		<div class="bcg" :style="{ 'background-image': 'url('+cat.image+')' }">
 			<div class="buttons">
 				<div class="mask"></div>
@@ -31,6 +31,7 @@
 	    },
 	    methods: {
 	    	pickNewCat: function () {
+	    		// Picking a new random cat form the cats array
 	    		this.cat = this.cats[Math.floor(Math.random()*this.cats.length)];
 	    	},
 	    	vote: function (vote) {

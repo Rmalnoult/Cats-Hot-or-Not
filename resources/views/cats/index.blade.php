@@ -5,17 +5,17 @@
 	@forelse($cats as $cat)
 		<div class="row cat">
 			<div class="col-xs-5">
-				<div class="cover avatar" style="background-image:url({{ $cat->image }});"></div>
+				<div class="cover avatar pull-right" style="background-image:url({{ $cat->image }});"></div>
 			</div>
-			<div class="col-sm-8 col-xs-7 text-white">
+			<div class="col-xs-7 text-white">
 				<h2>{{ $cat->score() }}%</h2>
-				<p><big>Positive votes: {{ $cat->positiveVotes() }}</big></p>
-				<p><big>Negative votes: {{ $cat->negativeVotes() }}</big></p>
+				<p>Positive votes: {{ $cat->positiveVotes() }}</p>
+				<p>Negative votes: {{ $cat->negativeVotes() }}</p>
 			</div>
 		</div>
 	@empty
 		<tr>
-			<td colspan="5">Aucun chat. :(</td>
+			<td colspan="5">No cat. :(</td>
 		</tr>
 	@endforelse
 </div>

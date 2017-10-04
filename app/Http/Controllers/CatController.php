@@ -20,20 +20,20 @@ class CatController extends Controller
     }
 
     /**
-     * Display a listing of cats.
+     * Display a list of 20 cats ordered by popularity.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $cats = Cat::limit(10)->get()->sortByDesc(function($cat){
+        $cats = Cat::limit(20)->get()->sortByDesc(function($cat){
             return $cat->score();
         });
         return view("cats.index")->with("cats", $cats);
     }
 
     /**
-     * Vote for a cat
+     * Upvote or Downvote for a cat
      *
      * @return \Illuminate\Http\Response
      */
@@ -47,5 +47,4 @@ class CatController extends Controller
         ]);
         return 200;
     }
-
 }

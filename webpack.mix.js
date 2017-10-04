@@ -18,7 +18,6 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
 
 mix.styles([
 	'resources/assets/css/style.css',
-	'resources/assets/css/mobile.css',
 ], 'public/css/all.css')
 .version();
 
