@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-	<div id="vote"></div>
-</div>
+<div id="vote"></div>
+@endsection
+
+@section('scripts')
+<script>
+	var cats = {!! $cats !!};
+</script>
+<script src="{{ mix('js/vote.js') }}"></script>
 @endsection

@@ -11,7 +11,7 @@
 |
 */
 
-// Route::post('/vote/{id}', 'CatController@vote')->where('id', '[0-9]+');
+Route::post('/cats/vote', 'CatController@vote');
 Route::get('/', 'CatController@home');
 Route::get('/cats', 'CatController@index');
 Auth::routes();

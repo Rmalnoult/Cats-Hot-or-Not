@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cat;
+use App\Vote;
 use Illuminate\Http\Request;
 
 class CatController extends Controller
@@ -15,7 +16,7 @@ class CatController extends Controller
     public function home()
     {
         $cats = Cat::all()->toJSON();
-        return view('cats.vote')->with('cats', $cats);
+        return view("cats.vote")->with("cats", $cats);
     }
 
     /**
@@ -25,8 +26,26 @@ class CatController extends Controller
      */
     public function index()
     {
-        $cats = Cat::paginate(20);
-        return view('cats.index')->with('cats', $cats);
+        $cats = Cat::limit(10)->get()->sortByDesc(function($cat){
+            return $cat->score();
+        });
+        return view("cats.index")->with("cats", $cats);
+    }
+
+    /**
+     * Vote for a cat
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function vote(Request $request)
+    {
+        $cat = Cat::findOrFail($request->id);
+        $positive = $request->vote == "positive" ? 1 : 0;
+        $vote = Vote::create([
+            "cat_id" => $cat->id,
+            "positive" => $positive,
+        ]);
+        return 200;
     }
 
 }

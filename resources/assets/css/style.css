@@ -1,22 +1,65 @@
 body {
-	background-image: url('../img/bcg2.jpg');
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: cover;
+	background: url('../img/bcg.jpg') no-repeat center center fixed;
+}
+body, html {
+	height: 100%;
+	display: flexbox;
 }
 .container {
 	max-width: 1300px;
 	margin: 0 auto;
 	width: 100%;
 }
+.absolute {
+	position: absolute;
+}
 .cover {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 }
+.text-white {
+	color: #fff;
+}
+.cat {
+	margin-top: 30px;
+}
 .avatar {
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
-	margin-bottom: 30px;
+}
+.navbar {
+	margin-bottom: 0;
+}
+#vote, #app {
+	height: 100%;
+	display: flexbox;
+}
+#vote .bcg {
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 95%;
+	position: relative;
+}
+#vote .buttons {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+#vote button {
+	margin: 30px 0;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background: none;
+}
+#vote .mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .4;
 }
